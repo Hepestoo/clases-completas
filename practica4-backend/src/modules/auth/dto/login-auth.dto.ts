@@ -1,15 +1,13 @@
-import { IsEmail, IsNotEmpty, IsOptional, MaxLength, MinLength } from "class-validator";
+import { IsEmail, IsNotEmpty, MaxLength, MinLength } from "class-validator";
 import { User } from "../interfaces/user.interface";
 
 export class LoginAuthDto implements User{
     @IsEmail()
     @IsNotEmpty()
-    email:string;
-    @MinLength(6)
-    @MaxLength(25)
+    email: string;
     @IsNotEmpty()
-    password:string;
-
-    @IsOptional() // Campo opcional
-  rememberMe?: boolean;
+    @MinLength(6)
+    @MaxLength(20)
+    password: string;
+    
 }

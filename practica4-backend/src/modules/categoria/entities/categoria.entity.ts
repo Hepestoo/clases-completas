@@ -6,12 +6,12 @@ export class Categoria {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column({type: 'varchar', length: 50})
-    nombre: string;
+    @Column({type: 'varchar', length:50})
+    nombre:string;
 
-    @Column({type: 'text', nullable: true})
-    detalle: string;
+    @Column({type: 'text', nullable:true})
+    detalle:string;
 
-    @OneToMany(()=>Producto, (prod)=>prod.categoria)
+    @OneToMany(()=>Producto,(prod)=>prod.categoria)
     producto:Producto[]
 }

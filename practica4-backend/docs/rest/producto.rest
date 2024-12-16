@@ -1,0 +1,18 @@
+###Listar productos
+
+GET http://localhost:3000/producto
+
+###Crear Producto
+
+POST http://localhost:3000/producto Content-Type: application/json
+Content-Type: application/json
+
+{
+    "nombre": "Precesador",
+    "precio": "20",
+    "stock": 2,
+    "categoria": 1
+}
+
+###Busqueda por nombre
+GET http://localhost:3000/producto/back?page=1&q=mm&sort=asc

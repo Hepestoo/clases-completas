@@ -4,18 +4,15 @@ import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "ty
 @Entity()
 export class Persona {
     @PrimaryGeneratedColumn()
-    id: number;
+    id:number;
 
     @Column()
-    nombres:string
+    nombres:string;
 
     @Column()
-    apellidos:string
+    apellios:string;
 
-
-    @OneToOne (()=>User, user=>user.persona)
+    @OneToOne(()=>User, user=>user.persona)
     @JoinColumn()
     user:User
-
-    
 }

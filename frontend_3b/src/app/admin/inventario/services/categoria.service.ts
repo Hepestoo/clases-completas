@@ -8,19 +8,22 @@ import { HttpClient } from '@angular/common/http';
 export class CategoriaService {
 
   private baseUrl = environment.urlServidor
-  private http=inject(HttpClient)
+  private http= inject(HttpClient)
 
   funListar(){
     return this.http.get(`${this.baseUrl}/categoria`)
+    
   }
 
-  funGuardar (registro:any){
-    return this.http.post(`${this.baseUrl}/categoria`,registro)
+  funGuardar(registro:any){
+    return this.http.post(`${this.baseUrl}/categoria`, registro)
   }
-  funModificar (id:number, registro:any){
+
+  funModificar(id:number, registro:any){
     return this.http.patch(`${this.baseUrl}/categoria/${id}`,registro)
   }
-  funEliminar (id:number){
-    return this.http.delete(`${this.baseUrl}/categoria/${id}`)
+
+  funEliminar(id:number){
+    return this.http.delete(`${this.baseUrl}/categoria/${id}`);
   }
 }

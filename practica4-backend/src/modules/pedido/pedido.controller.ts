@@ -5,6 +5,8 @@ import { UpdatePedidoDto } from './dto/update-pedido.dto';
 import { ApiTags } from '@nestjs/swagger';
 
 @ApiTags('pedido')
+
+
 @Controller('pedido')
 export class PedidoController {
   constructor(private readonly pedidoService: PedidoService) {}

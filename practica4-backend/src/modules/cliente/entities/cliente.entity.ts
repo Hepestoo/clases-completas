@@ -9,7 +9,7 @@ export class Cliente {
     nombre_completo:string;
 
     @Column()
-    dni: string;
+    dni:string;
 
     @Column()
     telefono:string;

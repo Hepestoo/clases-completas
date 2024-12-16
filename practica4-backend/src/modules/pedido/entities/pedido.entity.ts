@@ -1,12 +1,11 @@
 import { Cliente } from "../../cliente/entities/cliente.entity";
-import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToMany, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { PedidoProducto } from "./pedidoproducto.entity";
-
 
 @Entity('pedidos')
 export class Pedido {
     @PrimaryGeneratedColumn()
-    id: number;
+    id:number;
 
     @Column()
     fecha:string;
@@ -18,8 +17,8 @@ export class Pedido {
     observaciones:string;
 
     @ManyToOne(()=>Cliente)
-    cliente:Cliente;
+    cliente:Cliente
 
-    @OneToMany(()=>PedidoProducto,pedprod=>pedprod.pedido )
-    public pedidoProductos: PedidoProducto[];
+    @ManyToMany(()=>PedidoProducto, pedprod=> pedprod.pedido)
+    pedidoProducto: PedidoProducto[];
 }

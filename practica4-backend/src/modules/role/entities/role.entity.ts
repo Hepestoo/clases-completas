@@ -13,6 +13,7 @@ export class Role {
     detalle:string;
 
     @ManyToMany(()=>User)
-    @JoinTable({name:'rol_user'}) //con esto ya se crea la tercera tabla
-    users:User[]
+    @JoinTable({name:'role_user'})
+    users: User[]
 }
+

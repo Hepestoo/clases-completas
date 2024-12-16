@@ -18,10 +18,10 @@ const routes: Routes = [
         path:"categoria",
         component:CategoriaComponent
       },
+
       {
         path:"producto",
         component:ProductoComponent
-
       }
     ]
   }
